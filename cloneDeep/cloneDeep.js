@@ -46,7 +46,7 @@ const cloneDeep = (param) => {
   } else {
     copyItem = {};
     for (let key in param) {
-      if (typeof param[key] === "object" && param[key] !== null) {
+      if (isObject(param[key])) {
         copyItem[key] = cloneDeep(param[key]);
       } else {
         copyItem[key] = param[key];
